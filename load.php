@@ -11,7 +11,12 @@ function load_template($name) {
     
 }
  
- 
+// This function is use for load the signup page
+ function load_signuptemplate($val){  
+
+    include __DIR__ ."/_signuptemplate/{$val}.php";
+    
+ }
 
 ?>
 
