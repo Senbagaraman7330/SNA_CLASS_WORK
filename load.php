@@ -1,7 +1,8 @@
 
 <?php
-error_reporting();
+// error_reporting();
 // Function to load a template file
+// include __DIR__."/db_connection.php";
 
 function load_template($name) {
 
@@ -10,12 +11,8 @@ function load_template($name) {
     include $_SERVER['DOCUMENT_ROOT']."/PHPdocs/SNA_CLASS_WORK/_albumtemplate/{$name}.php";
     
 }
- 
-// This function is use for load the signup page
- function load_signuptemplate($val){  
-
-    include __DIR__ ."/_signuptemplate/{$val}.php";
-    
+ function load_signuptemplate($val){
+    include __DIR__."/_signuptemplate/{$val}.php";
  }
 
 ?>
