@@ -7,7 +7,7 @@ function load_template($name) {
 
     // Construct the file path dynamically
    
-    include $_SERVER['DOCUMENT_ROOT']."/PHPdocs/SNA_CLASS_WORK/_template/{$name}.php";
+    include $_SERVER['DOCUMENT_ROOT']."/PHPdocs/SNA_CLASS_WORK/_albumtemplate/{$name}.php";
     
 }
  
