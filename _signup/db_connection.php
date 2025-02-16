@@ -1,50 +1,35 @@
-<?PHP
+<?PHP  
+
+// include class file 
+include __DIR__."/../signup_class/database_connection_class.php";
+include __DIR__."/../signup_class/insert_value_db_class.php";
+
 //Error display code
 error_reporting(E_ALL);
 ini_set('display_errors',1);
 
+if ($_SERVER['REQUEST_METHOD'] === "POST"){
 
-//Datebase connection
-$servername = "localhost";
-$username = "phpmyadmin"; 
-$password = "Raman@7330";
-$database = "SNA_CLASS";
 
-$conn = new mysqli($servername,$username,$password,$database);
+ $user = $_POST['username'] ?? '';
+ $pass = $_POST['password'] ?? '';
+ $email = $_POST['email'] ?? '';
+ $phone = $_POST['phone'] ?? '';
 
-// click connection
-if (!$conn){
-    echo "Not connected ". mysqli_connect_error($conn);
-}
-// print_r($_POST);
-$user = $_POST['username'] ?? '';
-$pass = $_POST['password'] ?? '';
-$email = $_POST['email'] ?? '';
-$phone = $_POST['phone'] ?? '';
-
-// Validate input (optional)
+ // Validate input (recommended)
+        
 if (empty($user) || empty($pass) || empty($email) || empty($phone)) {
     die("All fields are required.");
 }
+else{
+    insertvalue::insertvalue_dd($user,$pass,$email,$phone);
+
+}
+           
+}
 
 
-//Get the values from the form via variable
+ 
 
-
-// Prepare the query for values
-$stmt = $conn->prepare("INSERT INTO signup (username, password, email, phone) VALUES (?, ?, ?, ?)");
-$stmt->bind_param("ssss", $user, $pass, $email, $phone);
-$stmt->execute();
-
-
-
-// check the values are insert properly
-
-if ($stmt->error) {
-    echo "Data are not inserted successfully";
-} 
-
-$stmt->close();
-$conn->close();
-?>
+ ?>
 

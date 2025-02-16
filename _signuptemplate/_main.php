@@ -31,11 +31,11 @@
   </form>
 </main>
 <?PHP 
-if ($_SERVER['REQUEST_METHOD'] === "POST"){
-$user = $_POST['username'];
-$pass = $_POST['password'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-}
+// if ($_SERVER['REQUEST_METHOD'] === "POST"){
+// $user = $_POST['username'];
+// $pass = $_POST['password'];
+// $email = $_POST['email'];
+// $phone = $_POST['phone'];
+// }
 
 ?> 

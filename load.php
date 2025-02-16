@@ -1,8 +1,8 @@
 
 <?php
-// error_reporting();
-// Function to load a template file
-// include __DIR__."/db_connection.php";
+// include database connection 
+// include __DIR__."/signup_class/database_connection_class.php"; 
+
 
 function load_template($name) {
 
@@ -14,6 +14,10 @@ function load_template($name) {
  function load_signuptemplate($val){
     include __DIR__."/_signuptemplate/{$val}.php";
  }
+
+
+
+
 
 ?>
 
