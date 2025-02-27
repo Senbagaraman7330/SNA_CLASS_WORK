@@ -12,11 +12,16 @@ function load_template($name) {
     
 }
  function load_signuptemplate($val){
+
     include __DIR__."/_signuptemplate/{$val}.php";
+
  }
 
 
+function load_signintemplate($val){
 
+    include __DIR__."/signin_template/{$val}.php";
+}
 
 
 ?>

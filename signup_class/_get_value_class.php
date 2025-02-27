@@ -13,7 +13,7 @@
     if($_SERVER['REQUEST_METHOD' ] === "POST"){
     //    $_POST['username'] ="";
         if(!empty($_POST['username'])){
-            $username = $_POST['username'];
+            $username = $_POST['username']??'';
         }
         else {
             die("Username is required");
@@ -54,3 +54,4 @@ if ($result->num_rows == 1) {
     
     
     ?>
+    
