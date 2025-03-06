@@ -1,5 +1,5 @@
 <main class="form-signin">
-  <form action="/PHPdocs/SNA_CLASS_WORK/_signup/signup.php" method="post">
+  <form action="/PHPdocs/SNA_CLASS_WORK/_signin/_signin.php" method="post">
     <img class="mb-4" src="https://academy.selfmade.ninja/assets/brand/logo-text-2.svg" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please sign in </h1>
 
@@ -23,5 +23,19 @@
   </form>
 </main>
 <?PHP 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  // value is existing or not 
+ if (!empty($_POST['username']) && !empty($_POST['password'])){
+
+  $username = $_POST['username'] ??'';
+  $password = $_POST['password'] ??'';
+
+  signin::user_data($username,$password);
+ }
+ else{
+  echo "All field are required ";
+ }
+}
 
 ?> 

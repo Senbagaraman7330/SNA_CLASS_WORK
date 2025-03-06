@@ -1,4 +1,5 @@
-<?PHP 
+
+<pre><?PHP 
 
 
 class Session {
@@ -14,7 +15,7 @@ public static function unset(){
 }
 
 // Session destory function 
-public static function destory(){
+public static function destroy(){
     session_destroy();
 
 }
@@ -48,6 +49,38 @@ public static function get($key, $default = false){
 
 
 
+
+// setcookie("testcookie", "testvalue", time() + (86400 * 30), "/");
+include 'libs/load.php';
+
+
+
+if (isset($_GET['logout'])) {
+    Session::destroy();
+    die("Session destroyed, <a href=''>Login Again</a>");
+}
+
+if (Session::get('is_loggedin')) {
+    $userdata = Session::get('session_user');
+    print("Welcome Back, $userdata[username]");
+    $result = $userdata;
+} else {
+    printf("No session found, trying to login now. <br>");
+
+    if ($result) {
+        echo "Login Success, $result[username]";
+        Session::set('is_loggedin', true);
+        Session::set('session_user', $result);
+    } else {
+        echo "Login failed <br>";
+    }
+}
+
+
+
+
+
+?></pre>
 
 
 

@@ -9,10 +9,10 @@ class database {
     public static function getconnection() {
    if (database::$conn == null){
          // Database credentials
-         $servername = "localhost";
-         $username = "phpmyadmin";
-         $password = "Raman@7330";
-         $database = "SNA_CLASS";
+         $servername = get_val('servername');
+         $username = get_val('username');
+         $password = get_val('password');
+         $database = get_val('database');
  
          // Establish connection
          self::$conn = new mysqli($servername, $username, $password, $database);
