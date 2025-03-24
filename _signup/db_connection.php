@@ -4,6 +4,7 @@
 include __DIR__."/../signup_class/database_connection_class.php";
 include __DIR__."/../signup_class/insert_value_db_class.php";
 // include __DIR__."/../signup_class/_get_value_class.php";
+include __DIR__."/../_user_class.php";
 
 //Error display code
 error_reporting(E_ALL);

@@ -2,7 +2,8 @@
 <?php
 // include database connection 
 // include __DIR__."/signup_class/database_connection_class.php"; 
-include __DIR__."/../photogram.php";
+include_once __DIR__."/../photogram.php";
+include_once __DIR__."/session_class.php";
 
 
 

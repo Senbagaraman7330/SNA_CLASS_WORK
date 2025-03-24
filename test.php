@@ -1,9 +1,8 @@
+<?PHP
 
-<pre>
+include __DIR__."/_user_class.php";
 
-<?PHP 
-
-
-
+$obj  = new User('end');
+ echo $obj ->__call("getFirstname",'');
+ echo $obj ->__call("getLastname",'');
 ?>
-</pre>
